@@ -2,8 +2,7 @@
 
 <h1><%= @author.name %></h1>
 
-<p><%= @author.hometown %></p>
-<p><%= @author.currently_writing %></p>
-<p><%= @author.total_awards %></p>
-
+<h2><%= "Author hometown: #{@author.hometown}" %></h2>
+<h2><%= "Author currently writing: #{@author.currently_writing}" %></h2>
+<h2><%= "Author total awards: #{@author.total_awards}" %></h2>
 <a href="/authors/<%= @author.id %>/edit">Edit</a>
