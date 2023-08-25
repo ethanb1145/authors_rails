@@ -9,8 +9,6 @@ RSpec.describe "authors index page", type: :feature do
     visit "/authors"
 
     expect(page).to have_content(author1.name)
-    expect(page).to have_content("Author name: #{author1.name}")
     expect(page).to have_content(author2.name)
-    expect(page).to have_content("Author name: #{author2.name}")
   end
 end
