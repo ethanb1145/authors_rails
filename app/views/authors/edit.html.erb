@@ -1,0 +1,11 @@
+<form action="/tasks/<%= @task.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Edit</p>
+  <input type='text' name='author[title]' value="<%= @author.name %>"/><br/>
+  <textarea name='author[name]'><%= @author.name %></textarea><br/>
+  <textarea name='author[hometown]'><%= @author.hometown %></textarea><br/>
+  <textarea name='author[currently_writing]'><%= @author.currently_writing %></textarea><br/>
+  <textarea name='author[total_awards]'><%= @author.total_awards %></textarea><br/>
+  <input type='submit'/>
+</form>
