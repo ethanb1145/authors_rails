@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   post "/authors", to: "authors#create"
   get "/authors/:id", to: "authors#show"
   get "/authors/:id/edit", to: "authors#edit"
-  patch "/tasks/:id", to: "tasks#update"
-  delete "/tasks/:id", to: "tasks#destroy"
+  patch "/authors/:id", to: "authors#update"
+  delete "/authors/:id", to: "authors#destroy"
 end
