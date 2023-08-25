@@ -1,9 +1,13 @@
 <form action="/authors" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter a new author:</p>
-  <input type='text' name='author[name]'/><br/>
-  <textarea name='author[hometown]'></textarea><br/>
-  <textarea name='author[currently_writing]'></textarea><br/>
-  <textarea name='author[total_awards]'></textarea><br/>
-  <input type='submit'/>
+  <label for="name">Author Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="hometown">Hometown:</label><br>
+  <input type="text" id="hometown" name="hometown"><br>
+  <label for="currently_writing">Currently Writing?</label><br>
+  <input type="checkbox" id="currently_writing" name="currently_writing"><br>
+  <label for="total_awards">Total Awards:</label><br>
+  <input type="text" id="total_awards" name="total_awards"><br>
+  <input type="submit" value="Create Author">
 </form>
