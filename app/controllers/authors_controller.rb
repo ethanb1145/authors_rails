@@ -4,18 +4,20 @@ class AuthorsController < ApplicationController
   end
 
   def new 
+
   end
 
-  def create 
+  def create
+    require 'pry';binding.pry
     author = Author.new({
       name: params[:author][:name],
       hometown: params[:author][:hometown],
       currently_writing: params[:author][:currently_writing],
       total_awards: params[:author][:total_awards]
-      })
-  
+    })
+    require 'pry';binding.pry
     author.save
-  
+    require 'pry';binding.pry
     redirect_to '/authors'
   end
 
@@ -30,7 +32,7 @@ class AuthorsController < ApplicationController
   def update
     author = Author.find(params[:id])
     author.update({
-      name: params[:author][:title],
+      name: params[:author][:name],
       hometown: params[:author][:hometown],
       currently_writing: params[:author][:currently_writing],
       total_awards: params[:author][:total_awards]
@@ -43,6 +45,6 @@ class AuthorsController < ApplicationController
 
   def destroy
     Author.destroy(params[:id])
-    redirect_to '/authors'
+    redirect_to "/authors"
   end
 end
