@@ -2,7 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Author, type: :model do
   describe "validations" do
-    it {should have_many(:books)}
+    it { should have_many(:books) }
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :hometown }
+    it { should validate_presence_of :total_awards }
+    it { should allow_value(true).for(:currently_writing) }
+    it { should allow_value(false).for(:currently_writing) }
   end
 
   describe "create_book" do
