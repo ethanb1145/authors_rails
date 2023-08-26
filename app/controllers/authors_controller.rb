@@ -53,11 +53,5 @@ class AuthorsController < ApplicationController
   def create_book
     author = Author.find(params[:author_id])
     book = author.books.build(book_params)
-
-    if book.save
-      redirect_to author_path(author)
-    else
-      render 'new_book'
-    end
   end
 end
