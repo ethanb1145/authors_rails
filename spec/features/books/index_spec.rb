@@ -10,6 +10,9 @@ RSpec.describe "Books index page", type: :feature do
 
     visit "/books"
 
-    expect(page).to have_content("Harry Potter and the Philosopher's Stone")
+    expect(page).to have_content("Book Name: Harry Potter and the Philosopher's Stone")
+    expect(page).to have_content("Genre: Fantasy")
+    expect(page).to have_content("Series: Yes")
+    expect(page).to have_content("Page Count: 223")
   end
 end
