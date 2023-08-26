@@ -6,7 +6,7 @@ RSpec.describe "Books index page", type: :feature do
   Then I see each Book in the system including the Book's attributes
   (data from each column that is on the book table)" do
     author = Author.create(name: "J.K. Rowling", hometown: "Yate, England", currently_writing: true, total_awards: 20)
-    author.books.create(book_name: "Harry Potter and the Philosopher's Stone", genre: "Fantasy", series: true, page_count: 223)
+    author.create_book(book_name: "Harry Potter and the Philosopher's Stone", genre: "Fantasy", series: true, page_count: 223)
 
     visit "/books"
 
