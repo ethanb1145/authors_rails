@@ -44,14 +44,4 @@ class AuthorsController < ApplicationController
     Author.destroy(params[:id])
     redirect_to "/authors"
   end
-
-  def new_book
-    @author = Author.find(params[:author_id])
-    @book = author.books.build
-  end
-
-  def create_book
-    author = Author.find(params[:author_id])
-    book = author.books.build(book_params)
-  end
 end
