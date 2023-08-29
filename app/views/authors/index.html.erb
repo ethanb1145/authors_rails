@@ -1,6 +1,7 @@
 <a href="/authors">Author Index</a>
 <a href="/books">Book Index</a>
 <h1>All Authors</h1>
+<li><a href="/authors/new">New Author</a></li>
 
 <% @authors.each do |author| %>
   <h3><a href="/authors/<%= author.id %>"><%= author.name %></a></h3>

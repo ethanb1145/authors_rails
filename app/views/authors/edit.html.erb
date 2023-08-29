@@ -3,7 +3,7 @@
 <form action="/authors/<%= @author.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="PATCH" />
-  <p>Edit Author</p>
+  <p>Update Author</p>
   <label for="name">Author Name:</label><br>
   <input type="text" id="name" name="name"><br>
   <label for="hometown">Hometown:</label><br>
