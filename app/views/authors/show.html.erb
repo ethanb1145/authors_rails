@@ -2,6 +2,8 @@
 <a href="/books">Book Index</a>
 
 <h1><%= @author.name %></h1>
+<li><a href="/authors/<%= @author.id %>/books/new">Create Book for Author</a></li>
+
 <a href="/authors/<%= @author.id %>/books/">Books</a>
 <p>Number of Associated Books: <%= @book_count %></p>
 
