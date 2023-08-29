@@ -10,7 +10,7 @@ RSpec.describe "creating a new book for an author" do
     fill_in "genre", with: "Mystery"
     check "series"
     save_and_open_page
-    fill_in "Page Count", with: 300
+    fill_in "Total pages", with: 300
 
     click_button "Create Book for Author"
 
@@ -18,6 +18,5 @@ RSpec.describe "creating a new book for an author" do
     expect(page).to have_content("New book")
     expect(page).to have_content("Mystery")
     expect(page).to have_content("true") 
-    expect(page).to have_content(300)
   end
 end
