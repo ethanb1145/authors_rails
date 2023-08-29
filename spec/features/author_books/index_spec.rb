@@ -12,5 +12,7 @@ RSpec.describe "authors books index page" do
 
     expect(page).to have_content(book.book_name)
     expect(page).to have_content(book.genre)
+    expect(page).to have_content(book.series)
+    expect(page).to have_content(book.page_count)
   end
 end
