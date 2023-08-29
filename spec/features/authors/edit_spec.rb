@@ -2,18 +2,19 @@ require 'rails_helper'
 
 RSpec.describe "the artist edit" do
   it "can edit the author" do
-    author = Author.create(name: "John Dwayne")
+    author = Author.create(name: "John Dwayne", hometown: "Denver", currently_writing: true, total_awards: 10)
 
-    visit "/artists"
+    visit "/authors"
 
-    expect(page).to have_content("John Dwayne")
-
-    click_button "Update"
+    click_link "Update"
 
     fill_in "Name", with: "John D"
+    fill_in "Hometown", with: "Seattle"
+    check "Currently writing"
+    fill_in "Total awards", with: "20"
     click_button "Update Author"
 
-    expect(current_path).to eq("/artists")
-    expect(page).to have_content("John D")
+    expect(current_path).to eq("/authors")
+    expect(page).to have_content(author.name)
   end
 end

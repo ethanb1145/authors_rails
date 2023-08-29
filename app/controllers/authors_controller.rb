@@ -10,7 +10,7 @@ class AuthorsController < ApplicationController
   def create
     author = Author.new(author_params)
     author.save
-    redirect_to '/authors'
+    redirect_to "/authors"
   end
 
   def show 
@@ -39,6 +39,6 @@ class AuthorsController < ApplicationController
   private
 
   def author_params
-    params.require(:author).permit(:name, :hometown, :currently_writing, :total_awards)
+    params.permit(:name, :hometown, :currently_writing, :total_awards)
   end
 end

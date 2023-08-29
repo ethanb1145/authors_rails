@@ -1,13 +1,12 @@
-<form action="/authors" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>Enter a new author:</p>
-  <label for="name">Author Name:</label><br>
-  <input type="text" id="name" name="author[name]"><br>
-  <label for="hometown">Hometown:</label><br>
-  <input type="text" id="hometown" name="author[hometown]"><br>
-  <label for="currently_writing">Currently Writing?</label><br>
-  <input type="checkbox" id="currently_writing" name="author[currently_writing]"><br>
-  <label for="total_awards">Total Awards:</label><br>
-  <input type="text" id="total_awards" name="author[total_awards]"><br>
-  <input type="submit" value="Create Author">
-</form>
+<%= form_with url: '/authors', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :hometown %>
+  <%= form.text_field :hometown %>
+  <%= form.label :currently_writing %>
+  <%= form.check_box :currently_writing %>
+  <%= form.label :total_awards %>
+  <%= form.text_field :total_awards %>
+
+  <%= form.submit "Create Author" %>
+<% end %>
