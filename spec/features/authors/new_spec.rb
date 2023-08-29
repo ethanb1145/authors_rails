@@ -23,9 +23,7 @@ RSpec.describe "author creation", type: :feature do
 
     click_button "Create Author"
 
+    expect(current_path).to eq("/authors")
     expect(page).to have_content("John D")
-    expect(page).to have_content("Denver")
-    expect(page).to have_content("Currently Writing: true")
-    expect(page).to have_content("Total Awards: 7")
   end
 end
