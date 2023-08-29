@@ -1,0 +1,14 @@
+<a href="/authors">Author Index</a>
+<a href="/books">Book Index</a>
+
+<h1><%= @book.book_name %></h1>
+
+<p><%= "Book genre: #{@book.genre}" %></p>
+<p><%= "Series?: #{@book.series}" %></p>
+<p><%= "Book page count: #{@book.page_count}" %></p>
+<a href="/books/<%= @book.id %>/edit">Update Book</a>
+<form action="/books/<%= @book.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete"/>
+</form>

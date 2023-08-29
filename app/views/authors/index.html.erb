@@ -1,0 +1,14 @@
+<a href="/authors">Author Index</a>
+<a href="/books">Book Index</a>
+<h1>All Authors</h1>
+<li><a href="/authors/new">New Author</a></li>
+
+<% @authors.each do |author| %>
+  <h3><a href="/authors/<%= author.id %>"><%= author.name %></a></h3>
+  <a href="/authors/<%= author.id %>/edit">Update</a>
+  <form action="/authors/<%= author.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete"/>
+  </form>
+<% end %>

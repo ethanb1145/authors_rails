@@ -1,0 +1,13 @@
+<a href="/authors">Author Index</a>
+<a href="/books">Book Index</a>
+<%= form_with url: "/authors/#{@author.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :hometown %>
+  <%= form.text_field :hometown %>
+  <%= form.label :currently_writing %>
+  <%= form.check_box :currently_writing %>
+  <%= form.label :total_awards %>
+  <%= form.text_field :total_awards %>
+  <%= form.submit 'Update Author' %>
+<% end %>
