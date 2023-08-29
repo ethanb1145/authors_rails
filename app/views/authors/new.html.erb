@@ -1,15 +1,13 @@
-<a href="/authors">Author Index</a>
-<a href="/books">Book Index</a>
 <form action="/authors" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Enter a new author:</p>
   <label for="name">Author Name:</label><br>
-  <input type="text" id="name" name="name"><br>
+  <input type="text" id="name" name="author[name]"><br>
   <label for="hometown">Hometown:</label><br>
-  <input type="text" id="hometown" name="hometown"><br>
+  <input type="text" id="hometown" name="author[hometown]"><br>
   <label for="currently_writing">Currently Writing?</label><br>
-  <input type="checkbox" id="currently_writing" name="currently_writing"><br>
+  <input type="checkbox" id="currently_writing" name="author[currently_writing]"><br>
   <label for="total_awards">Total Awards:</label><br>
-  <input type="text" id="total_awards" name="total_awards"><br>
+  <input type="text" id="total_awards" name="author[total_awards]"><br>
   <input type="submit" value="Create Author">
 </form>

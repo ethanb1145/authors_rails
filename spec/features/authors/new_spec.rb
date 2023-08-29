@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "author creation", type: :feature do 
   it "As a visitor
-  When I visit the Parent Index page
+  When I visit the Author Index page
   Then I see a link to create a new Author record, New Author
   When I click this link
   Then I am taken to '/authors/new' where I  see a form for a new author record

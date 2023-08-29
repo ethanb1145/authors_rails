@@ -8,12 +8,7 @@ class AuthorsController < ApplicationController
   end
 
   def create
-    author = Author.new({
-      name: params[:author][:name],
-      hometown: params[:author][:hometown],
-      currently_writing: params[:author][:currently_writing],
-      total_awards: params[:author][:total_awards]
-    })
+    author = Author.new(author_params)
     author.save
     redirect_to '/authors'
   end
@@ -29,12 +24,7 @@ class AuthorsController < ApplicationController
 
   def update
     author = Author.find(params[:id])
-    author.update({
-      name: params[:author][:name],
-      hometown: params[:author][:hometown],
-      currently_writing: params[:author][:currently_writing],
-      total_awards: params[:author][:total_awards]
-    })
+    author.update(author_params)
 
     author.save
 
@@ -44,5 +34,11 @@ class AuthorsController < ApplicationController
   def destroy
     Author.destroy(params[:id])
     redirect_to "/authors"
+  end
+
+  private
+
+  def author_params
+    params.require(:author).permit(:name, :hometown, :currently_writing, :total_awards)
   end
 end
