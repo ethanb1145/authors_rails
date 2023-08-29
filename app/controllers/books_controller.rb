@@ -20,4 +20,10 @@ class BooksController < ApplicationController
     @book.save
     redirect_to '/books'
   end
+
+  def destroy
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect_to "/books"
+  end
 end
