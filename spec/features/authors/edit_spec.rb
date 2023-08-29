@@ -15,6 +15,6 @@ RSpec.describe "the artist edit" do
     click_button "Update Author"
 
     expect(current_path).to eq("/authors")
-    expect(page).to have_content(author.name)
+    expect(page).to have_content("John D")
   end
 end

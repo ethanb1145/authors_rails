@@ -16,10 +16,10 @@ RSpec.describe "author creation", type: :feature do
     
     click_link "New Author"
 
-    fill_in "Author Name", with: "John D"
+    fill_in "Name", with: "John D"
     fill_in "Hometown", with: "Denver"
-    check "Currently Writing?"
-    fill_in "Total Awards", with: "7"
+    check "Currently writing"
+    fill_in "Total awards", with: "7"
 
     click_button "Create Author"
 
