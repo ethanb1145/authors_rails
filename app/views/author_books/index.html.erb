@@ -1,3 +1,6 @@
+<a href="/authors">Author Index</a>
+<a href="/books">Book Index</a>
+<h1> Books </h1>
 <% @books.each do |book| %>
   <%= link_to book.book_name, "/books/#{book.id}" %>
   <p>Book Name: <%= book.book_name %></p>
