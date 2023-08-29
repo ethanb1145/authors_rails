@@ -10,7 +10,7 @@ RSpec.describe "authors books index page" do
 
     visit "/authors/#{author.id}/books"
 
-    expect(page).to have_content(book.title)
+    expect(page).to have_content(book.book_name)
     expect(page).to have_content(book.genre)
   end
 end
