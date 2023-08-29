@@ -28,7 +28,7 @@ class AuthorsController < ApplicationController
 
     author.save
 
-    redirect_to "/authors/#{author.id}"
+    redirect_to "/authors"
   end
 
   def destroy
