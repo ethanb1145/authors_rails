@@ -1,16 +1,16 @@
 class AuthorBooksController < ApplicationController
   def index
-    author = Author.find(params[:author_id])
+    author = Author.find(params[:id])
     @books = author.books
   end
 
   def new
-    author = Author.find(params[:author_id])
+    author = Author.find(params[:id])
     @book = author.books.build
   end
 
   def create
-    author = Author.find(params[:author_id])
+    author = Author.find(params[:id])
     @book = author.books.build(book_params)
 
     redirect_to "/authors/#{author.id}/books"
@@ -18,7 +18,7 @@ class AuthorBooksController < ApplicationController
   end
 
   def show
-    author = Author.find(params[:author_id])
+    author = Author.find(params[:id])
     @book = author.books.find(params[:id])
   end
 
