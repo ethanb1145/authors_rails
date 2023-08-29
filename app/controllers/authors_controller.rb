@@ -4,7 +4,6 @@ class AuthorsController < ApplicationController
   end
 
   def new 
-
   end
 
   def create
@@ -25,9 +24,7 @@ class AuthorsController < ApplicationController
   def update
     author = Author.find(params[:id])
     author.update(author_params)
-
     author.save
-
     redirect_to "/authors"
   end
 

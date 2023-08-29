@@ -12,9 +12,7 @@ class AuthorBooksController < ApplicationController
   def create
     author = Author.find(params[:id])
     @book = author.books.build(book_params)
-
     @book.save
-
     redirect_to "/authors/#{author.id}/books"
   end
 

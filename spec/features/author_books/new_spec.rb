@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "creating a new book for an author" do
-  it "creates a new book and displays its attributes" do
+  it "As a visitor
+  When I visit a Author Books Index page
+  Then I see a link to add a new book for that author Create Book
+  When I click the link
+  I am taken to '/authors/:author_id/books/new' where I see a form to add a book
+  When I fill in the form with the book's attributes:
+  And I click the button Create Book
+  Then a `POST` request is sent to '/authors/:author_id/books',
+  a new book object/row is created for that author,
+  and I am redirected to the Author Books Index page where I can see the new book listed" do
     author = Author.create(name: "J.K. Rowling", hometown: "Yate, England", currently_writing: true, total_awards: 20)
 
     visit "/authors/#{author.id}/books/new"

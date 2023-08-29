@@ -1,7 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe "the artist edit" do
-  it "can edit the author" do
+RSpec.describe "the author edit" do
+  it "As a visitor
+  When I visit the author index page
+  Next to every author, I see a link to edit that author's info
+  When I click the link, I should be taken to that parent's edit page where I can update its information " do
     author = Author.create(name: "John Dwayne", hometown: "Denver", currently_writing: true, total_awards: 10)
 
     visit "/authors"
