@@ -2,6 +2,6 @@
   <%= link_to book.book_name, "/books/#{book.id}" %>
   <p>Book Name: <%= book.book_name %></p>
   <p>Genre: <%= book.genre %></p>
-  <p>Series: <%= book.series ? 'Yes' : 'No' %></p>
+  <p>Series: <%= book.series %></p>
   <p>Page Count: <%= book.page_count %></p>
 <% end %>
