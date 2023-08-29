@@ -6,10 +6,11 @@ RSpec.describe "creating a new book for an author" do
 
     visit "/authors/#{author.id}/books/new"
 
-    fill_in "book_book_name", with: "New book"
-    fill_in "book_genre", with: "Mystery"
-    check "book_series"
-    fill_in "book_page_count", with: 300
+    fill_in "book_name", with: "New book"
+    fill_in "genre", with: "Mystery"
+    check "series"
+    save_and_open_page
+    fill_in "Page Count", with: 300
 
     click_button "Create Book for Author"
 

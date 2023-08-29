@@ -5,16 +5,17 @@ class AuthorBooksController < ApplicationController
   end
 
   def new
-    author = Author.find(params[:id])
-    @book = author.books.build
+    @author = Author.find(params[:id])
+    @book = @author.books.build
   end
 
   def create
     author = Author.find(params[:id])
     @book = author.books.build(book_params)
 
-    redirect_to "/authors/#{author.id}/books"
+    @book.save
 
+    redirect_to "/authors/#{author.id}/books"
   end
 
   def show
@@ -25,6 +26,6 @@ class AuthorBooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:book_name, :genre, :series, :page_count)
+    params.permit(:book_name, :genre, :series, :page_count)
   end
 end
