@@ -2,8 +2,9 @@
 <a href="/books">Book Index</a>
 
 <h1><%= @author.name %></h1>
+<p>Number of Associated Books: <%= @book_count %></p>
 
-<p><%= "Author hometown: #{@author.hometown}" %></p>
-<p><%= "Currently writing?: #{@author.currently_writing}" %></p>
-<p><%= "Author total awards: #{@author.total_awards}" %></p>
+<p><%= "Author Hometown: #{@author.hometown}" %></p>
+<p><%= "Currently Writing?: #{@author.currently_writing}" %></p>
+<p><%= "Author Total Awards: #{@author.total_awards}" %></p>
 <a href="/authors/<%= @author.id %>/edit">Edit</a>

@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   def index 
-    @authors = Author.all
+    @authors = Author.order(created_at: :desc)
   end
 
   def new 
@@ -20,6 +20,7 @@ class AuthorsController < ApplicationController
 
   def show 
     @author = Author.find(params[:id])
+    @book_count = @author.books.count
   end
 
   def edit
